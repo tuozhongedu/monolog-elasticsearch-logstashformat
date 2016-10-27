@@ -16,9 +16,9 @@ class ElasticLogstashHandler extends \Monolog\Handler\AbstractProcessingHandler
         $this->client = $client;
         $this->options = array_merge(
             array(
-                'index'          => 'logstash-'.date('Y.m.d'),      // Elastic index name
-                'type'           => 'logs',       // Elastic document type
-                'ignore_error'   => false,          // Suppress exceptions
+                'index' => 'logstash-' . date('Y.m.d'), // Elastic index name
+                'type' => 'logs', // Elastic document type
+                'ignore_error' => false, // Suppress exceptions
             ),
             $options
         );
@@ -35,14 +35,14 @@ class ElasticLogstashHandler extends \Monolog\Handler\AbstractProcessingHandler
                     'index' => $this->options['index'],
                     'type' => $this->options['type'],
                     'timeout' => '50ms',
-                    'body' => json_decode($record['formatted'], true)
+                    'body' => json_decode($record['formatted'], true),
                 ]
             );
         } catch (\Exception $e) {
             // Well that didn't pan out...
-			if (!$this->options['ignore_error']) {
-				throw $e;
-			}
+            if (!$this->options['ignore_error']) {
+                throw $e;
+            }
         }
     }
 

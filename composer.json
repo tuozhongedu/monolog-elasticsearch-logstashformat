@@ -1,5 +1,5 @@
 {
-    "name": "nulpunkt/monolog-elasticsearch-logstashformat",
+    "name": "tuozhongedu/monolog-elasticsearch-logstashformat",
     "type": "library",
     "description": "Use the logstash formatter with elasticsearch",
     "keywords": ["elasticsearch", "monolog", "logstash", "kibana"],
@@ -14,8 +14,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-		"elasticsearch/elasticsearch": "~1.0",
+        "php": ">=5.4.0",
+		"elasticsearch/elasticsearch": "~2.0",
 		"monolog/monolog": "1.*"
     },
     "autoload": {
